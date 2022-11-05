@@ -1,4 +1,3 @@
-
 # 4.1.6.13 PROJECT: Tic-Tac-Toe
 from random import randrange
 
