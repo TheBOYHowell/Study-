@@ -1,5 +1,6 @@
 
 # beauty_soup.py
+import csv
 from bs4 import BeautifulSoup
 from urllib.request import urlopen
 url ='https://www.google.com/finance/markets/cryptocurrencies' 
@@ -24,7 +25,7 @@ for q in texts4:
     z.append(q.get_text())
 
 list_of_tuples1 = list(zip(l, k,o,z))
-print(list_of_tuples1)
+
 
 for i in list_of_tuples1:
     print(i[0] , i[1] , i[2] , i[3])
@@ -43,4 +44,11 @@ for i in list_of_tuples1:
     #for row in tabl.find_all('tr')[1:]:
         #td = row.find_all('td')
         #r = [i.text.replace('\n','') for i in td]
-        #csv_writer.writerow(r
+        #csv_writer.writerow(r)
+
+
+with open('file4.csv','w') as f:
+    for row in list_of_tuples1:
+        for x in row:
+            f.write(str(x) + '   ')
+        f.write('\n')
